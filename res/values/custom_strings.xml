@@ -17,7 +17,12 @@
 */
 -->
 
-<resources>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- Custom seekbar -->
+    <string name="custom_seekbar_value">Value: <xliff:g id="v">%s</xliff:g></string>
+    <string name="custom_seekbar_default_value">by default</string>
+    <string name="custom_seekbar_default_value_to_set">Default value: <xliff:g id="v">%s</xliff:g>\nLong tap to set</string>
+    <string name="custom_seekbar_default_value_is_set">Default value is set</string>
 
     <!-- Settings title to show Google Now at -1 screen on launcher. [CHAR LIMIT=50] -->
     <string name="title_show_google_app">Swipe to access Google app</string>
