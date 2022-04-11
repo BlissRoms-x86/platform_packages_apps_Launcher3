@@ -103,4 +103,10 @@
         settings:units="%"
         android:defaultValue="100" />
 
+    <SwitchPreference
+        android:key="pref_allow_phone_overview_grid"
+        android:title="@string/pref_allow_phone_overview_grid"
+        android:defaultValue="true"
+        android:summary="@string/pref_allow_phone_overview_grid_desc" />
+
 </androidx.preference.PreferenceScreen>
