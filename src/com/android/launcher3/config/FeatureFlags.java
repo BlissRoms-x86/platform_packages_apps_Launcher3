@@ -165,7 +165,7 @@ public final class FeatureFlags {
             "Always use hardware optimization for folder animations.");
 
     public static final BooleanFlag ENABLE_ALL_APPS_EDU = getDebugFlag(
-            "ENABLE_ALL_APPS_EDU", true,
+            "ENABLE_ALL_APPS_EDU", false,
             "Shows user a tutorial on how to get to All Apps after X amount of attempts.");
 
     public static final BooleanFlag SEPARATE_RECENTS_ACTIVITY = getDebugFlag(
@@ -193,7 +193,7 @@ public final class FeatureFlags {
     public static final BooleanFlag ENABLE_TASKBAR = getDebugFlag(
             "ENABLE_TASKBAR", true, "Allows a system Taskbar to be shown on larger devices.");
 
-    public static final BooleanFlag ENABLE_TASKBAR_EDU = getDebugFlag("ENABLE_TASKBAR_EDU", true,
+    public static final BooleanFlag ENABLE_TASKBAR_EDU = getDebugFlag("ENABLE_TASKBAR_EDU", false,
             "Enables showing taskbar education the first time an app is opened.");
 
     public static final BooleanFlag ENABLE_TASKBAR_POPUP_MENU = getDebugFlag(
