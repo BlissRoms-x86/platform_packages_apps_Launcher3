@@ -380,8 +380,6 @@ public class Launcher extends StatefulActivity<LauncherState> implements Launche
     protected InstanceId mAllAppsSessionLogId;
     private LauncherState mPrevLauncherState;
 
-    private boolean mPendingRestart;
-
     @Override
     @TargetApi(Build.VERSION_CODES.S)
     protected void onCreate(Bundle savedInstanceState) {
@@ -593,7 +591,7 @@ public class Launcher extends StatefulActivity<LauncherState> implements Launche
     public void onConfigurationChanged(Configuration newConfig) {
         int diff = newConfig.diff(mOldConfig);
         if ((diff & (CONFIG_ORIENTATION | CONFIG_SCREEN_SIZE)) != 0) {
-            onIdpChanged(false, false);
+            onIdpChanged(false);
         }
 
         mOldConfig.setTo(newConfig);
@@ -601,11 +599,7 @@ public class Launcher extends StatefulActivity<LauncherState> implements Launche
     }
 
     @Override
-    public void onIdpChanged(boolean modelPropertiesChanged, boolean taskbarChanged) {
-        if (taskbarChanged) {
-            mPendingRestart = true;
-        }
-
+    public void onIdpChanged(boolean modelPropertiesChanged) {
         initDeviceProfile(mDeviceProfile.inv);
         dispatchDeviceProfileChanged();
         reapplyUi();
@@ -1151,10 +1145,6 @@ public class Launcher extends StatefulActivity<LauncherState> implements Launche
         }
 
         TraceHelper.INSTANCE.endSection(traceToken);
-
-        if (mPendingRestart) {
-            System.exit(0);
-        }
     }
 
     @Override
